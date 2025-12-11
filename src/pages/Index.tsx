@@ -56,7 +56,7 @@ const Index = () => {
             </div>
             <div>
               <div className="text-2xl font-bold text-pink-400">AI</div>
-              <div className="text-sm">Powered</div>
+              <div className="text-sm">Powered Solution For Students</div>
             </div>
           </div>
         </div>
