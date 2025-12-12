@@ -1,9 +1,9 @@
-
 import { useNavigate, useParams } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, BookOpen, Clock, Target } from 'lucide-react';
+import Footer from '@/components/Footer';
 import { 
   Calculator, 
   Atom, 
@@ -244,6 +244,8 @@ const SubjectsPage = () => {
             );
           })}
         </div>
+
+        <Footer />
       </div>
     </div>
   );

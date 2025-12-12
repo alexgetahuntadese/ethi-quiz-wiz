@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { ArrowLeft, LogIn } from "lucide-react";
 import { joinSession } from "@/lib/sessionUtils";
 import { useToast } from "@/hooks/use-toast";
+import Footer from "@/components/Footer";
 
 const JoinPage = () => {
   const navigate = useNavigate();
@@ -99,6 +100,8 @@ const JoinPage = () => {
             </Button>
           </CardContent>
         </Card>
+
+        <Footer />
       </div>
     </div>
   );
