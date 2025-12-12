@@ -1,3 +1,4 @@
+// Footer component - v1.1
 const Footer = () => {
   return (
     <footer className="w-full py-6 text-center">
