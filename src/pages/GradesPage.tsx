@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, Users, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Footer from "@/components/Footer";
 
 const GradesPage = () => {
   const navigate = useNavigate();
@@ -68,6 +69,8 @@ const GradesPage = () => {
             </Card>
           ))}
         </div>
+
+        <Footer />
       </div>
     </div>
   );

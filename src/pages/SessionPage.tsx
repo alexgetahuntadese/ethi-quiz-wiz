@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, Copy, Play, Trophy, Users } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import Footer from "@/components/Footer";
 import { 
   getSession, 
   getSessionParticipants, 
@@ -293,6 +294,8 @@ const SessionPage = () => {
             Waiting for host to start the quiz...
           </div>
         )}
+
+        <Footer />
       </div>
     </div>
   );

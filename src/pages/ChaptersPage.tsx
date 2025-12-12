@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 // import { Progress } from '@/components/ui/progress';
 import { ArrowLeft, Play, CheckCircle, Clock, BookOpen, Target } from 'lucide-react';
+import Footer from '@/components/Footer';
 import { grade12Mathematics } from '@/data/grade12Mathematics';
 import { grade12BiologyQuestions } from '@/data/grade12BiologyQuestions';
 import { grade12ChemistryQuestions } from '@/data/grade12ChemistryQuestions';
@@ -806,6 +807,8 @@ const ChaptersPage = () => {
             </Card>
           ))}
         </div>
+
+        <Footer />
       </div>
     </div>
   );

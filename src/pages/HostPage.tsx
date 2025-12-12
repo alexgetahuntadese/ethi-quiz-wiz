@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { ArrowLeft, Users } from "lucide-react";
 import { createSession } from "@/lib/sessionUtils";
 import { useToast } from "@/hooks/use-toast";
+import Footer from "@/components/Footer";
 
 const HostPage = () => {
   const navigate = useNavigate();
@@ -142,6 +143,8 @@ const HostPage = () => {
             </Button>
           </CardContent>
         </Card>
+
+        <Footer />
       </div>
     </div>
   );
