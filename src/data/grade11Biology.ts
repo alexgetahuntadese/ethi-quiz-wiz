@@ -9,9 +9,9 @@ export interface Grade11BiologyQuestion {
   chapter: string;
   subject: string;
 }
+
 export const grade11Biology: { [chapter: string]: Grade11BiologyQuestion[] } = {
   'Unit 1: Biology and Technology': [
-    // EASY QUESTIONS
     {
       id: 'g11bio_biotech_e1',
       question: 'What is the basic unit of life?',
@@ -23,98 +23,6 @@ export const grade11Biology: { [chapter: string]: Grade11BiologyQuestion[] } = {
       subject: 'Biology'
     },
     {
-      id: 'g11bio_biotech_e2',
-      question: 'Which molecule carries genetic information?',
-      options: ['DNA', 'Protein', 'Carbohydrate', 'Lipid'],
-      correct: 'DNA',
-      explanation: 'DNA stores and transmits genetic information in living organisms.',
-      difficulty: 'Easy',
-      chapter: 'Unit 1: Biology and Technology',
-      subject: 'Biology'
-    },
-    {
-      id: 'g11bio_biotech_e3',
-      question: 'Which organelle is known as the powerhouse of the cell?',
-      options: ['Mitochondria', 'Nucleus', 'Ribosome', 'Chloroplast'],
-      correct: 'Mitochondria',
-      explanation: 'Mitochondria generate energy in the form of ATP for cellular activities.',
-      difficulty: 'Easy',
-      chapter: 'Unit 1: Biology and Technology',
-      subject: 'Biology'
-    },
-    {
-      id: 'g11bio_biotech_e4',
-      question: 'Which process produces oxygen in plants?',
-      options: ['Photosynthesis', 'Respiration', 'Fermentation', 'Transpiration'],
-      correct: 'Photosynthesis',
-      explanation: 'Photosynthesis releases oxygen as a by-product when plants convert sunlight into energy.',
-      difficulty: 'Easy',
-      chapter: 'Unit 1: Biology and Technology',
-      subject: 'Biology'
-    },
-    {
-      id: 'g11bio_biotech_e5',
-      question: 'Which type of cell lacks a nucleus?',
-      options: ['Prokaryotic cell', 'Eukaryotic cell', 'Animal cell', 'Plant cell'],
-      correct: 'Prokaryotic cell',
-      explanation: 'Prokaryotic cells, like bacteria, do not have a nucleus.',
-      difficulty: 'Easy',
-      chapter: 'Unit 1: Biology and Technology',
-      subject: 'Biology'
-    },
-    {
-      id: 'g11bio_biotech_e6',
-      question: 'Which gas is essential for respiration?',
-      options: ['Oxygen', 'Carbon dioxide', 'Nitrogen', 'Hydrogen'],
-      correct: 'Oxygen',
-      explanation: 'Oxygen is required for aerobic respiration to release energy from food.',
-      difficulty: 'Easy',
-      chapter: 'Unit 1: Biology and Technology',
-      subject: 'Biology'
-    },
-    {
-      id: 'g11bio_biotech_e7',
-      question: 'Which organelle is responsible for protein synthesis?',
-      options: ['Ribosome', 'Mitochondria', 'Nucleus', 'Golgi apparatus'],
-      correct: 'Ribosome',
-      explanation: 'Ribosomes assemble amino acids into proteins.',
-      difficulty: 'Easy',
-      chapter: 'Unit 1: Biology and Technology',
-      subject: 'Biology'
-    },
-    {
-      id: 'g11bio_biotech_e8',
-      question: 'Which pigment gives plants their green color?',
-      options: ['Chlorophyll', 'Hemoglobin', 'Carotene', 'Melanin'],
-      correct: 'Chlorophyll',
-      explanation: 'Chlorophyll absorbs light for photosynthesis and gives plants their green color.',
-      difficulty: 'Easy',
-      chapter: 'Unit 1: Biology and Technology',
-      subject: 'Biology'
-    },
-    {
-      id: 'g11bio_biotech_e9',
-      question: 'Which organelle controls cell activities?',
-      options: ['Nucleus', 'Mitochondria', 'Ribosome', 'Vacuole'],
-      correct: 'Nucleus',
-      explanation: 'The nucleus contains DNA and regulates cell functions.',
-      difficulty: 'Easy',
-      chapter: 'Unit 1: Biology and Technology',
-      subject: 'Biology'
-    },
-    {
-      id: 'g11bio_biotech_e10',
-      question: 'Which process breaks down glucose to release energy?',
-      options: ['Respiration', 'Photosynthesis', 'Fermentation', 'Transpiration'],
-      correct: 'Respiration',
-      explanation: 'Respiration is the process of breaking down glucose to release energy.',
-      difficulty: 'Easy',
-      chapter: 'Unit 1: Biology and Technology',
-      subject: 'Biology'
-    },
-
-    // MEDIUM QUESTIONS
-    {
       id: 'g11bio_biotech_m1',
       question: 'What is biotechnology?',
       options: ['Use of living organisms in technology', 'Study of cells', 'Chemical processes', 'Physical processes'],
@@ -125,97 +33,176 @@ export const grade11Biology: { [chapter: string]: Grade11BiologyQuestion[] } = {
       subject: 'Biology'
     },
     {
-      id: 'g11bio_biotech_m2',
-      question: 'Which technique is used to amplify DNA?',
-      options: ['PCR', 'Photosynthesis', 'Respiration', 'Fermentation'],
-      correct: 'PCR',
-      explanation: 'Polymerase Chain Reaction (PCR) is used to make multiple copies of DNA.',
-      difficulty: 'Medium',
+      id: 'g11bio_biotech_h1',
+      question: 'Which of the following is an example of genetic engineering?',
+      options: ['Insulin production in bacteria', 'Plant photosynthesis', 'Animal respiration', 'Cell division'],
+      correct: 'Insulin production in bacteria',
+      explanation: 'Genetic engineering involves modifying organisms to produce desired products, like using bacteria to produce human insulin.',
+      difficulty: 'Hard',
       chapter: 'Unit 1: Biology and Technology',
+      subject: 'Biology'
+    }
+  ],
+  'Unit 2: Characteristics of animals': [
+    {
+      id: 'g11bio_animals_e1',
+      question: 'What is the main characteristic that distinguishes animals from plants?',
+      options: ['Movement and heterotrophy', 'Cell wall presence', 'Photosynthesis', 'Root system'],
+      correct: 'Movement and heterotrophy',
+      explanation: 'Animals are characterized by their ability to move and obtain food from other organisms (heterotrophy).',
+      difficulty: 'Easy',
+      chapter: 'Unit 2: Characteristics of animals',
       subject: 'Biology'
     },
     {
-      id: 'g11bio_biotech_m3',
-      question: 'Which type of RNA carries amino acids to ribosomes?',
-      options: ['tRNA', 'mRNA', 'rRNA', 'snRNA'],
-      correct: 'tRNA',
-      explanation: 'Transfer RNA (tRNA) brings amino acids to ribosomes during protein synthesis.',
+      id: 'g11bio_animals_m1',
+      question: 'Which phylum includes animals with radial symmetry?',
+      options: ['Cnidaria', 'Arthropoda', 'Chordata', 'Mollusca'],
+      correct: 'Cnidaria',
+      explanation: 'Cnidarians like jellyfish and sea anemones exhibit radial symmetry around a central axis.',
       difficulty: 'Medium',
-      chapter: 'Unit 1: Biology and Technology',
+      chapter: 'Unit 2: Characteristics of animals',
       subject: 'Biology'
     },
     {
-      id: 'g11bio_biotech_m4',
-      question: 'Which process allows exchange of genetic material in bacteria?',
-      options: ['Conjugation', 'Photosynthesis', 'Respiration', 'Transpiration'],
-      correct: 'Conjugation',
-      explanation: 'Conjugation is a process where bacteria transfer genetic material through direct contact.',
-      difficulty: 'Medium',
-      chapter: 'Unit 1: Biology and Technology',
+      id: 'g11bio_animals_h1',
+      question: 'What type of body cavity do arthropods have?',
+      options: ['Hemocoel', 'Coelom', 'Pseudocoelom', 'No body cavity'],
+      correct: 'Hemocoel',
+      explanation: 'Arthropods have a hemocoel, an open body cavity where organs are bathed in hemolymph.',
+      difficulty: 'Hard',
+      chapter: 'Unit 2: Characteristics of animals',
+      subject: 'Biology'
+    }
+  ],
+  'Unit 3: Enzymes': [
+    {
+      id: 'g11bio_enzymes_e1',
+      question: 'What are enzymes?',
+      options: ['Biological catalysts', 'Energy sources', 'Structural proteins', 'Genetic material'],
+      correct: 'Biological catalysts',
+      explanation: 'Enzymes are proteins that act as biological catalysts, speeding up chemical reactions in living organisms.',
+      difficulty: 'Easy',
+      chapter: 'Unit 3: Enzymes',
       subject: 'Biology'
     },
     {
-      id: 'g11bio_biotech_m5',
-      question: 'Which enzyme is used in DNA replication?',
-      options: ['DNA polymerase', 'Amylase', 'Lipase', 'Protease'],
-      correct: 'DNA polymerase',
-      explanation: 'DNA polymerase adds nucleotides during DNA replication.',
+      id: 'g11bio_enzymes_m1',
+      question: 'What happens to enzyme activity at very high temperatures?',
+      options: ['Enzyme denatures', 'Activity increases indefinitely', 'No change occurs', 'Enzyme multiplies'],
+      correct: 'Enzyme denatures',
+      explanation: 'At very high temperatures, enzymes lose their shape (denature) and become inactive.',
       difficulty: 'Medium',
-      chapter: 'Unit 1: Biology and Technology',
+      chapter: 'Unit 3: Enzymes',
       subject: 'Biology'
     },
     {
-      id: 'g11bio_biotech_m6',
-      question: 'Which biotechnology product is used to treat diabetes?',
-      options: ['Insulin', 'Antibiotics', 'Vaccines', 'Hormones'],
+      id: 'g11bio_enzymes_h1',
+      question: 'What is the induced fit model of enzyme action?',
+      options: ['Enzyme changes shape to fit substrate', 'Substrate changes to fit enzyme', 'Both remain rigid', 'Random collision theory'],
+      correct: 'Enzyme changes shape to fit substrate',
+      explanation: 'The induced fit model suggests that enzymes change their shape slightly to better accommodate the substrate.',
+      difficulty: 'Hard',
+      chapter: 'Unit 3: Enzymes',
+      subject: 'Biology'
+    }
+  ],
+  'Unit 4: Genetics': [
+    {
+      id: 'g11bio_genetics_e1',
+      question: 'What is a gene?',
+      options: ['A unit of heredity', 'A type of protein', 'A cell organelle', 'A type of carbohydrate'],
+      correct: 'A unit of heredity',
+      explanation: 'A gene is a unit of heredity that determines characteristics passed from parents to offspring.',
+      difficulty: 'Easy',
+      chapter: 'Unit 4: Genetics',
+      subject: 'Biology'
+    },
+    {
+      id: 'g11bio_genetics_m1',
+      question: 'What is the relationship between genes, chromosomes, and DNA?',
+      options: ['Genes are segments of DNA located on chromosomes', 'They are all the same thing', 'Chromosomes contain genes but not DNA', 'DNA is separate from genes and chromosomes'],
+      correct: 'Genes are segments of DNA located on chromosomes',
+      explanation: 'Genes are specific sequences of DNA that are organized into structures called chromosomes.',
+      difficulty: 'Medium',
+      chapter: 'Unit 4: Genetics',
+      subject: 'Biology'
+    },
+    {
+      id: 'g11bio_genetics_h1',
+      question: 'In a dihybrid cross between AaBb × AaBb, what is the expected phenotypic ratio?',
+      options: ['9:3:3:1', '3:1', '1:1', '1:2:1'],
+      correct: '9:3:3:1',
+      explanation: 'In a dihybrid cross, the phenotypic ratio is 9:3:3:1 when both traits show complete dominance.',
+      difficulty: 'Hard',
+      chapter: 'Unit 4: Genetics',
+      subject: 'Biology'
+    }
+  ],
+  'Unit 5: The human body systems': [
+    {
+      id: 'g11bio_human_e1',
+      question: 'Which system is responsible for transporting oxygen in the body?',
+      options: ['Circulatory system', 'Nervous system', 'Digestive system', 'Excretory system'],
+      correct: 'Circulatory system',
+      explanation: 'The circulatory system, including the heart and blood vessels, transports oxygen throughout the body.',
+      difficulty: 'Easy',
+      chapter: 'Unit 5: The human body systems',
+      subject: 'Biology'
+    },
+    {
+      id: 'g11bio_human_m1',
+      question: 'What is the main function of the nephron?',
+      options: ['Filter blood and form urine', 'Pump blood', 'Digest food', 'Transmit nerve signals'],
+      correct: 'Filter blood and form urine',
+      explanation: 'The nephron is the functional unit of the kidney that filters blood and produces urine.',
+      difficulty: 'Medium',
+      chapter: 'Unit 5: The human body systems',
+      subject: 'Biology'
+    },
+    {
+      id: 'g11bio_human_h1',
+      question: 'Which hormone regulates blood glucose levels?',
+      options: ['Insulin', 'Thyroxine', 'Adrenaline', 'Growth hormone'],
       correct: 'Insulin',
-      explanation: 'Genetically engineered bacteria produce insulin for diabetes treatment.',
-      difficulty: 'Medium',
-      chapter: 'Unit 1: Biology and Technology',
+      explanation: 'Insulin, produced by the pancreas, regulates blood glucose levels by promoting glucose uptake by cells.',
+      difficulty: 'Hard',
+      chapter: 'Unit 5: The human body systems',
+      subject: 'Biology'
+    }
+  ],
+  'Unit 6: Population and natural resources': [
+    {
+      id: 'g11bio_population_e1',
+      question: 'What is population ecology?',
+      options: ['Study of population dynamics', 'Study of individual organisms', 'Study of cell structure', 'Study of genetic variation'],
+      correct: 'Study of population dynamics',
+      explanation: 'Population ecology studies how populations of organisms change in size and composition over time.',
+      difficulty: 'Easy',
+      chapter: 'Unit 6: Population and natural resources',
       subject: 'Biology'
     },
     {
-      id: 'g11bio_biotech_m7',
-      question: 'Which process is used to produce genetically identical organisms?',
-      options: ['Cloning', 'Mutation', 'Hybridization', 'Cross-pollination'],
-      correct: 'Cloning',
-      explanation: 'Cloning creates organisms with identical genetic material.',
+      id: 'g11bio_population_m1',
+      question: 'What is carrying capacity?',
+      options: ['Maximum population an environment can support', 'Minimum population needed for survival', 'Rate of population growth', 'Number of births per year'],
+      correct: 'Maximum population an environment can support',
+      explanation: 'Carrying capacity is the maximum number of individuals an environment can sustain indefinitely.',
       difficulty: 'Medium',
-      chapter: 'Unit 1: Biology and Technology',
+      chapter: 'Unit 6: Population and natural resources',
       subject: 'Biology'
     },
     {
-      id: 'g11bio_biotech_m8',
-      question: 'Which biotechnology technique is used in agriculture to resist pests?',
-      options: ['Genetic modification', 'Photosynthesis', 'Respiration', 'Fermentation'],
-      correct: 'Genetic modification',
-      explanation: 'Genetically modified crops are engineered to resist pests and diseases.',
-      difficulty: 'Medium',
-      chapter: 'Unit 1: Biology and Technology',
+      id: 'g11bio_population_h1',
+      question: 'Which type of population growth shows a J-shaped curve?',
+      options: ['Exponential growth', 'Logistic growth', 'Zero growth', 'Negative growth'],
+      correct: 'Exponential growth',
+      explanation: 'Exponential growth produces a J-shaped curve when resources are unlimited and there are no limiting factors.',
+      difficulty: 'Hard',
+      chapter: 'Unit 6: Population and natural resources',
       subject: 'Biology'
-    },
-    {
-      id: 'g11bio_biotech_m9',
-      question: 'Which organelle is involved in packaging proteins?',
-      options: ['Golgi apparatus', 'Nucleus', 'Mitochondria', 'Ribosome'],
-      correct: 'Golgi apparatus',
-      explanation: 'The Golgi apparatus modifies and packages proteins for transport.',
-      difficulty: 'Medium',
-      chapter: 'Unit 1: Biology and Technology',
-      subject: 'Biology'
-    },
-    {
-    {
-  id: 'g11bio_biotech_m10',
-  question: 'Which biotechnology method is used to identify individuals?',
-  options: ['DNA fingerprinting', 'Photosynthesis', 'Respiration', 'Fermentation'],
-  correct: 'DNA fingerprinting',
-  explanation: 'DNA fingerprinting analyzes unique patterns in an individual’s DNA to distinguish one person from another.',
-  difficulty: 'Medium',
-  chapter: 'Unit 1: Biology and Technology',
-  subject: 'Biology'
-}
-    ]
+    }
+  ]
 };
 
 // Export chapter names for easy access
