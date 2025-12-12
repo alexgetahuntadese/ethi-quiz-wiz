@@ -15,6 +15,9 @@ import { grade12HistoryQuestions } from '@/data/grade12HistoryQuestions';
 import { grade12CivicsQuestions } from '@/data/grade12CivicsQuestions';
 import { grade12ITQuestions } from '@/data/grade12ITQuestions';
 import { grade11Biology } from '@/data/grade11Biology';
+import { grade11Physics } from '@/data/grade11Physics';
+import { grade11Chemistry } from '@/data/grade11Chemistry';
+import { grade11AgricultureQuestions } from '@/data/grade11AgricultureQuestions';
 
 const ChaptersPage = () => {
   const navigate = useNavigate();
@@ -35,6 +38,84 @@ const ChaptersPage = () => {
           id: index + 1,
           title: chapterName,
           description: getGrade11BiologyChapterDescription(chapterName),
+          duration: getDurationEstimate(questions.length),
+          difficulty: getDominantDifficulty(easyQuestions, mediumQuestions, hardQuestions),
+          progress: Math.floor(Math.random() * 101),
+          isCompleted: Math.random() > 0.7,
+          questionsCount: questions.length,
+          difficultyBreakdown: {
+            easy: easyQuestions,
+            medium: mediumQuestions,
+            hard: hardQuestions
+          }
+        };
+      });
+    }
+
+    // Handle Grade 11 Physics
+    if (decodedSubject === 'Physics' && grade === '11') {
+      return Object.keys(grade11Physics).map((chapterName, index) => {
+        const questions = grade11Physics[chapterName];
+        const easyQuestions = questions.filter(q => q.difficulty === 'Easy').length;
+        const mediumQuestions = questions.filter(q => q.difficulty === 'Medium').length;
+        const hardQuestions = questions.filter(q => q.difficulty === 'Hard').length;
+        
+        return {
+          id: index + 1,
+          title: chapterName,
+          description: getGrade11PhysicsChapterDescription(chapterName),
+          duration: getDurationEstimate(questions.length),
+          difficulty: getDominantDifficulty(easyQuestions, mediumQuestions, hardQuestions),
+          progress: Math.floor(Math.random() * 101),
+          isCompleted: Math.random() > 0.7,
+          questionsCount: questions.length,
+          difficultyBreakdown: {
+            easy: easyQuestions,
+            medium: mediumQuestions,
+            hard: hardQuestions
+          }
+        };
+      });
+    }
+
+    // Handle Grade 11 Chemistry
+    if (decodedSubject === 'Chemistry' && grade === '11') {
+      return Object.keys(grade11Chemistry).map((chapterName, index) => {
+        const questions = grade11Chemistry[chapterName];
+        const easyQuestions = questions.filter(q => q.difficulty === 'Easy').length;
+        const mediumQuestions = questions.filter(q => q.difficulty === 'Medium').length;
+        const hardQuestions = questions.filter(q => q.difficulty === 'Hard').length;
+        
+        return {
+          id: index + 1,
+          title: chapterName,
+          description: getGrade11ChemistryChapterDescription(chapterName),
+          duration: getDurationEstimate(questions.length),
+          difficulty: getDominantDifficulty(easyQuestions, mediumQuestions, hardQuestions),
+          progress: Math.floor(Math.random() * 101),
+          isCompleted: Math.random() > 0.7,
+          questionsCount: questions.length,
+          difficultyBreakdown: {
+            easy: easyQuestions,
+            medium: mediumQuestions,
+            hard: hardQuestions
+          }
+        };
+      });
+    }
+
+    // Handle Grade 11 Agriculture
+    if (decodedSubject === 'Agriculture' && grade === '11') {
+      return Object.keys(grade11AgricultureQuestions).map((chapterName, index) => {
+        const questions = grade11AgricultureQuestions[chapterName];
+        const easyQuestions = questions.filter(q => q.difficulty === 'Easy').length;
+        const mediumQuestions = questions.filter(q => q.difficulty === 'Medium').length;
+        const hardQuestions = questions.filter(q => q.difficulty === 'Hard').length;
+        
+        return {
+          id: index + 1,
+          title: chapterName,
+          description: getGrade11AgricultureChapterDescription(chapterName),
           duration: getDurationEstimate(questions.length),
           difficulty: getDominantDifficulty(easyQuestions, mediumQuestions, hardQuestions),
           progress: Math.floor(Math.random() * 101),
@@ -380,6 +461,32 @@ const ChaptersPage = () => {
       "Unit 6: Population and natural resources": "Investigate population dynamics, environmental factors, and sustainable resource management"
     };
     return descriptions[chapterName] || "Comprehensive study of biological concepts and life processes";
+  };
+
+  const getGrade11PhysicsChapterDescription = (chapterName: string) => {
+    const descriptions: { [key: string]: string } = {
+      "Chapter 1: Mechanics": "Study forces, motion, Newton's laws, and the fundamental principles governing physical systems",
+      "Chapter 2: Waves and Sound": "Explore wave properties, sound propagation, frequency, wavelength, and their applications"
+    };
+    return descriptions[chapterName] || "Comprehensive study of physics concepts and principles";
+  };
+
+  const getGrade11ChemistryChapterDescription = (chapterName: string) => {
+    const descriptions: { [key: string]: string } = {
+      "Chapter 1: Atomic Structure": "Learn about atoms, subatomic particles, electron configurations, and the periodic table",
+      "Chapter 2: Chemical Bonding": "Understand ionic, covalent, and metallic bonds and their properties"
+    };
+    return descriptions[chapterName] || "Comprehensive study of chemistry concepts and reactions";
+  };
+
+  const getGrade11AgricultureChapterDescription = (chapterName: string) => {
+    const descriptions: { [key: string]: string } = {
+      "Chapter 1: Introduction to Crop Production": "Learn the fundamentals of cultivating crops, from soil preparation to harvesting",
+      "Chapter 2: Field Crops Production and Management": "Master techniques for growing and managing cereals, legumes, and other field crops",
+      "Chapter 3: Horticulture": "Explore the science of growing fruits, vegetables, and ornamental plants",
+      "Chapter 4: Animal Production": "Study livestock management, breeding, and animal husbandry practices"
+    };
+    return descriptions[chapterName] || "Comprehensive study of agricultural practices and techniques";
   };
 
   const getChapterDescription = (chapterName: string) => {
