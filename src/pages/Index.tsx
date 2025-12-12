@@ -13,7 +13,7 @@ const Index = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEleme
         <div className="w-full max-w-4xl">
           <div className="text-center mb-12">
             <h1 className="text-6xl font-bold text-white mb-4 opacity-0 animate-fade-in">
-              EthioQuiz 2050
+              EthioQuiz 2050 Oromia
             </h1>
             <p className="text-xl text-blue-100 mb-8 opacity-0 animate-fade-in [animation-delay:0.2s]">
               Advanced Learning Platform for Ethiopian Students
