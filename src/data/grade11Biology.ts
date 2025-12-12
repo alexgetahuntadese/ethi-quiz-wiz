@@ -205,9 +205,18 @@ export const grade11Biology: { [chapter: string]: Grade11BiologyQuestion[] } = {
       subject: 'Biology'
     },
     {
-      id: 'g11bio_biotech_m10',
-      question: 'Which biotechnology method is used to identify individuals?',
-      options: ['DNA fingerprinting
+    {
+  id: 'g11bio_biotech_m10',
+  question: 'Which biotechnology method is used to identify individuals?',
+  options: ['DNA fingerprinting', 'Photosynthesis', 'Respiration', 'Fermentation'],
+  correct: 'DNA fingerprinting',
+  explanation: 'DNA fingerprinting analyzes unique patterns in an individual’s DNA to distinguish one person from another.',
+  difficulty: 'Medium',
+  chapter: 'Unit 1: Biology and Technology',
+  subject: 'Biology'
+}
+    ]
+};
 
 // Export chapter names for easy access
 export const grade11BiologyChapters = Object.keys(grade11Biology);
