@@ -55,6 +55,7 @@ const Index = () => {
               <div className="text-sm">Grade Levels</div>
             </div>
             <div>
+              <p>HIIIIIIIIIIIIIIIIIIII<p/>
               <div className="text-2xl font-bold text-pink-400">AIIIIIIIIIIIIIII</div>
               <div className="text-sm">Powered Solution For Students</div>
             </div>
