@@ -19,7 +19,10 @@ import QuestionCard from '@/components/QuestionCard';
 import Results from '@/components/Results';
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { ArrowLeft, Eye } from 'lucide-react';
+import { ArrowLeft, Eye, Brain } from 'lucide-react';
+import { useAuth } from '@/contexts/AuthContext';
+import { useAdaptiveLearning } from '@/hooks/useAdaptiveLearning';
+import { Badge } from '@/components/ui/badge';
 
 interface Question {
   id: string;
@@ -190,6 +193,9 @@ const getQuestionsForSubject = (subject: string, chapter: string, difficulty: st
 const QuizPage = () => {
   const params = useParams();
   const navigate = useNavigate();
+  const { user } = useAuth();
+  const { recordAnswer, recordQuizSession, getRecommendations, recommendations } = useAdaptiveLearning();
+  
   const subject = params.subject;
   const chapterId = params.chapterId ? decodeURIComponent(params.chapterId) : null;
   const difficulty = params.difficulty;
@@ -205,6 +211,14 @@ const QuizPage = () => {
   const [error, setError] = useState<string | null>(null);
   const [showAnswerForQuestion, setShowAnswerForQuestion] = useState<number | null>(null);
   const [revealedAnswers, setRevealedAnswers] = useState<Set<number>>(new Set());
+  const [answeredQuestionIds, setAnsweredQuestionIds] = useState<Set<string>>(new Set());
+
+  // Get recommendations when user is logged in
+  useEffect(() => {
+    if (user && subject && grade) {
+      getRecommendations(subject, parseInt(grade));
+    }
+  }, [user, subject, grade]);
 
   const initializeQuestions = () => {
     console.log('Initializing questions with params:', { subject, chapterId, difficulty, grade });
@@ -259,9 +273,24 @@ const QuizPage = () => {
     };
   }, [showResults, startTime, isLoading, questions.length]);
 
-  const handleAnswerSelect = (answer: string) => {
+  const handleAnswerSelect = async (answer: string) => {
     console.log('Answer selected:', answer, 'for question index:', currentQuestionIndex);
     setSelectedAnswers({ ...selectedAnswers, [currentQuestionIndex]: answer });
+    
+    // Record answer for adaptive learning if user is logged in
+    const currentQuestion = questions[currentQuestionIndex];
+    if (user && currentQuestion && !answeredQuestionIds.has(currentQuestion.id)) {
+      const isCorrect = answer === currentQuestion.correct;
+      await recordAnswer({
+        questionId: currentQuestion.id,
+        subject: subject || '',
+        chapter: chapterId || '',
+        grade: parseInt(grade || '12'),
+        isCorrect,
+        difficulty: difficulty || 'medium',
+      });
+      setAnsweredQuestionIds(prev => new Set([...prev, currentQuestion.id]));
+    }
   };
 
   const handleShowAnswer = () => {
@@ -277,6 +306,19 @@ const QuizPage = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
+      // Record quiz session for adaptive learning
+      if (user && subject && grade) {
+        const correctCount = calculateScore();
+        recordQuizSession(
+          subject,
+          chapterId,
+          parseInt(grade),
+          difficulty || 'medium',
+          questions.length,
+          correctCount,
+          Math.floor(elapsedTime / 1000)
+        );
+      }
       setShowResults(true);
     }
   };
@@ -479,6 +521,12 @@ const QuizPage = () => {
             Grade {grade} {subject} - {chapterId} ({difficulty})
           </h2>
         </div>
+        {user && (
+          <Badge className="bg-purple-600/50 text-purple-200 border border-purple-500/30">
+            <Brain className="h-3 w-3 mr-1" />
+            Adaptive Mode
+          </Badge>
+        )}
       </div>
 
       {showResults ? (

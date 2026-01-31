@@ -14,7 +14,309 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      chapter_mastery: {
+        Row: {
+          chapter: string
+          correct_answers: number | null
+          created_at: string
+          grade: number
+          id: string
+          last_practiced: string | null
+          mastery_level: number | null
+          recommended_review: boolean | null
+          subject: string
+          total_questions: number | null
+          updated_at: string
+          user_id: string
+          weak_area: boolean | null
+        }
+        Insert: {
+          chapter: string
+          correct_answers?: number | null
+          created_at?: string
+          grade: number
+          id?: string
+          last_practiced?: string | null
+          mastery_level?: number | null
+          recommended_review?: boolean | null
+          subject: string
+          total_questions?: number | null
+          updated_at?: string
+          user_id: string
+          weak_area?: boolean | null
+        }
+        Update: {
+          chapter?: string
+          correct_answers?: number | null
+          created_at?: string
+          grade?: number
+          id?: string
+          last_practiced?: string | null
+          mastery_level?: number | null
+          recommended_review?: boolean | null
+          subject?: string
+          total_questions?: number | null
+          updated_at?: string
+          user_id?: string
+          weak_area?: boolean | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          display_name: string | null
+          grade: number | null
+          id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          grade?: number | null
+          id?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          grade?: number | null
+          id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      question_history: {
+        Row: {
+          answered_at: string
+          chapter: string
+          difficulty: string | null
+          ease_factor: number | null
+          grade: number
+          id: string
+          is_correct: boolean
+          next_review_at: string | null
+          question_id: string
+          review_interval_days: number | null
+          subject: string
+          time_taken_seconds: number | null
+          user_id: string
+        }
+        Insert: {
+          answered_at?: string
+          chapter: string
+          difficulty?: string | null
+          ease_factor?: number | null
+          grade: number
+          id?: string
+          is_correct: boolean
+          next_review_at?: string | null
+          question_id: string
+          review_interval_days?: number | null
+          subject: string
+          time_taken_seconds?: number | null
+          user_id: string
+        }
+        Update: {
+          answered_at?: string
+          chapter?: string
+          difficulty?: string | null
+          ease_factor?: number | null
+          grade?: number
+          id?: string
+          is_correct?: boolean
+          next_review_at?: string | null
+          question_id?: string
+          review_interval_days?: number | null
+          subject?: string
+          time_taken_seconds?: number | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      quiz_sessions: {
+        Row: {
+          adaptive_difficulty_change: string | null
+          chapter: string | null
+          completed_at: string
+          correct_answers: number
+          difficulty: string
+          grade: number
+          id: string
+          score_percentage: number
+          subject: string
+          time_taken_seconds: number | null
+          total_questions: number
+          user_id: string
+        }
+        Insert: {
+          adaptive_difficulty_change?: string | null
+          chapter?: string | null
+          completed_at?: string
+          correct_answers: number
+          difficulty: string
+          grade: number
+          id?: string
+          score_percentage: number
+          subject: string
+          time_taken_seconds?: number | null
+          total_questions: number
+          user_id: string
+        }
+        Update: {
+          adaptive_difficulty_change?: string | null
+          chapter?: string | null
+          completed_at?: string
+          correct_answers?: number
+          difficulty?: string
+          grade?: number
+          id?: string
+          score_percentage?: number
+          subject?: string
+          time_taken_seconds?: number | null
+          total_questions?: number
+          user_id?: string
+        }
+        Relationships: []
+      }
+      spaced_repetition_queue: {
+        Row: {
+          chapter: string
+          created_at: string
+          ease_factor: number | null
+          grade: number
+          id: string
+          interval_days: number | null
+          next_review_date: string
+          priority: number | null
+          question_id: string
+          subject: string
+          times_correct: number | null
+          times_reviewed: number | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          chapter: string
+          created_at?: string
+          ease_factor?: number | null
+          grade: number
+          id?: string
+          interval_days?: number | null
+          next_review_date: string
+          priority?: number | null
+          question_id: string
+          subject: string
+          times_correct?: number | null
+          times_reviewed?: number | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          chapter?: string
+          created_at?: string
+          ease_factor?: number | null
+          grade?: number
+          id?: string
+          interval_days?: number | null
+          next_review_date?: string
+          priority?: number | null
+          question_id?: string
+          subject?: string
+          times_correct?: number | null
+          times_reviewed?: number | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      subject_mastery: {
+        Row: {
+          correct_answers: number | null
+          created_at: string
+          current_difficulty: string | null
+          grade: number
+          id: string
+          last_practiced: string | null
+          mastery_level: number | null
+          subject: string
+          total_questions: number | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          correct_answers?: number | null
+          created_at?: string
+          current_difficulty?: string | null
+          grade: number
+          id?: string
+          last_practiced?: string | null
+          mastery_level?: number | null
+          subject: string
+          total_questions?: number | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          correct_answers?: number | null
+          created_at?: string
+          current_difficulty?: string | null
+          grade?: number
+          id?: string
+          last_practiced?: string | null
+          mastery_level?: number | null
+          subject?: string
+          total_questions?: number | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      user_learning_stats: {
+        Row: {
+          created_at: string
+          current_streak_days: number | null
+          id: string
+          last_activity_date: string | null
+          longest_streak_days: number | null
+          skill_level: string | null
+          total_correct_answers: number | null
+          total_questions_answered: number | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          current_streak_days?: number | null
+          id?: string
+          last_activity_date?: string | null
+          longest_streak_days?: number | null
+          skill_level?: string | null
+          total_correct_answers?: number | null
+          total_questions_answered?: number | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          current_streak_days?: number | null
+          id?: string
+          last_activity_date?: string | null
+          longest_streak_days?: number | null
+          skill_level?: string | null
+          total_correct_answers?: number | null
+          total_questions_answered?: number | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
